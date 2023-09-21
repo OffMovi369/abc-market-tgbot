@@ -10,7 +10,6 @@ class Status(Enum):
 class User:
     id: int
     status: Status = Status.command
-    data: dict = {}
 
 users = {}
 
