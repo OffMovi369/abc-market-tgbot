@@ -13,6 +13,8 @@ class User:
     current_page: str = "main"
     previous_page: str = None
     data_name: str = None
+    summ: float = None
+    country: str = None
 
 
 class UserHandle:

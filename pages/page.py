@@ -28,6 +28,15 @@ class Page:
             return wrapper
         return decorator
 
+    def get_data(self, data_name:str):
+        def decorator(function):
+            async def wrapper(message:Message):
+                result = await function(message)
+                return result
+            self.data_handlers.update({data_name: wrapper})
+            return wrapper
+        return decorator
+
 
     async def change(self,message:Message, new_page_name:str, text:str=None):
         user = UserHandle.get_user(message.from_user.id)
